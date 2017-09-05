@@ -10,34 +10,28 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-            DerivedClass dc = new DerivedClass();
-            dc.field1 = 8;
-            dc.showValue();
-            BaseClass bc = (BaseClass)dc;
-            bc.field1 = 5;
-            bc.showValue();
-            Console.ReadLine();
+            SecondDerived sd = new SecondDerived();
+            sd.report();
         }
     }
 
-    public class BaseClass
+    class Base
     {
-        public int field1;
-        public void showValue()
-        {
-            Console.WriteLine(field1);
-        }
-    };
-    public class DerivedClass : BaseClass
-
+        protected string name = "My name";
+    }
+    class Derived : Base
     {
-        new public int field1;
-        new public void showValue()
-        {
-            Console.WriteLine(field1);
-        }
-
 
     }
+    class SecondDerived : Derived
+    {
+        public void report()
+        {
+            Console.WriteLine(name);
+        }
+
+    }
+
+
 
 }
