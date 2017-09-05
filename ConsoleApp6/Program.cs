@@ -10,42 +10,20 @@ namespace ConsoleApp6
     { 
         static void Main(string[] args)
         {
-            // Person Benjamin = new Person();
-            // Person Benjamin = new Person("Benjamin", "Franklin");
-            Person Benjamin = new Person("Benjamin");
+            Foo(2);
             Console.ReadLine();
-
         }
+        static void Foo(int x)
+        {
+            Console.WriteLine("Foo(int {0})",x);
+        }
+
+        static void Foo(double x)
+        {
+            Console.WriteLine("Foo(double {0})", x);
+        }
+
     }
 
-    public class Person
-    {
-        public string last;
-        public string first;
-        public Person(string firstName, string lastName)
-        {
-            last = lastName;
-            first = firstName;
-            Console.Write("Hi, \"{0}  {1}\" thank you for registering.", first, last);
-        }
-
-        public Person(string firstName)
-        {
-            first = firstName;
-            Console.Write("\"{0}\", please enter your last name :", first);
-            last = Console.ReadLine();
-            Console.Write("Well done, \"{0}  {1}\" thank you for your input.", first, last);
-        }
-
-        public Person()
-        {
-            Console.Write("Hi, please enter your name :");
-            first = Console.ReadLine();
-            Console.Write("\"{0}\", please enter your last name :", first);
-            last = Console.ReadLine();
-            Console.Write("Well done, \"{0}  {1}\" thank you for your input.", first, last);
-
-        }
-    }
 
 }
