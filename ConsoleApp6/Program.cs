@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleApp6
 {
     class Program
-    {
+    { 
         static void Main(string[] args)
         {
             // Person Benjamin = new Person();
