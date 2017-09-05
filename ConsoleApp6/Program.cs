@@ -7,23 +7,37 @@ using System.Threading.Tasks;
 namespace ConsoleApp6
 {
     class Program
-    { 
+    {
         static void Main(string[] args)
         {
-            Foo(2);
+            DerivedClass dc = new DerivedClass();
+            dc.field1 = 8;
+            dc.showValue();
+            BaseClass bc = (BaseClass)dc;
+            bc.field1 = 5;
+            bc.showValue();
             Console.ReadLine();
         }
-        static void Foo(int x)
-        {
-            Console.WriteLine("Foo(int {0})",x);
-        }
-
-        static void Foo(double x)
-        {
-            Console.WriteLine("Foo(double {0})", x);
-        }
-
     }
 
+    public class BaseClass
+    {
+        public int field1;
+        public void showValue()
+        {
+            Console.WriteLine(field1);
+        }
+    };
+    public class DerivedClass : BaseClass
+
+    {
+        new public int field1;
+        new public void showValue()
+        {
+            Console.WriteLine(field1);
+        }
+
+
+    }
 
 }
